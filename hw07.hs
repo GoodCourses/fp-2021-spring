@@ -71,7 +71,7 @@ calculateStudentsLog' = undefined
 
 -- | Хорошо знакомый нам тип данных "Дерево"
 --
-data Tree a = Node a [Tree] | Leaf
+data Tree a = Node a [Tree a] | Leaf
   deriving (Eq, Show)
 
 -- 3. Сделайте 'Tree' представителем класса типов 'Foldable' (1 б)
@@ -123,7 +123,7 @@ newtype Basket = Basket { apples :: Map String [Apple] }
 --      В 'Data.Map.Strict' вы найдёте функции, которые помогут вам
 --      инициализировать и модифицировать мапу (0.5 б)
 --      
-collectBasket :: Apple Tree -> Basket
+collectBasket :: Tree Apple -> Basket
 collectBasket = undefined
 
 -- | Двоичная куча (https://neerc.ifmo.ru/wiki/index.php?title=Двоичная_куча)
@@ -140,7 +140,7 @@ data BinaryHeap a
 -- | 6.1. Реализуйте функцию siftDown, восстанавливающую свойство кучи в куче (0.5 б)
 --      
 siftDown :: Ord a => BinaryHeap a -> BinaryHeap a
-buildHeap = undefined
+siftDown = undefined
 
 -- | 6.2. Реализуйте с помощью свёртки (которая уже написана в коде) 
 --        функцию buildHeap, которая за __линейное время__ конструирует 
